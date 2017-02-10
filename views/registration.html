@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Pleas enter your datas</h2>
+ 
+  <form>
+    <div class="form-group">
+      <label for="log">Login:</label>
+      <input type="text" class="form-control" placeholder="Enter login" ng-model="reg.user.log">
+    </div>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" placeholder="Enter name" ng-model="reg.user.name">
+    </div>
+     <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" ng-model="reg.user.pass">
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="reg.addUser()">Submit</button>
+    <button type="submit" class="btn btn-primary" ng-click="reg.back()">LogIn</button>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Hello!</h2>
+  <form>
+    <div class="form-group">
+      <label for="email">Login:</label>
+      <input type="text" class="form-control myInput"  placeholder="Enter login" ng-model="log.user.log">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control myInput" placeholder="Enter password" ng-model="log.user.pass">
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="log.check()">Submit</button>
+    <button type="button" class="btn btn-primary" ng-click="log.registration()">Registration</button>
+    <span class="wrong"></span>
+  </form>
+</div>

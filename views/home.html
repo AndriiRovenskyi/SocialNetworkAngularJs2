@@ -1,0 +1,72 @@
+<div class="postSection">
+   <div class="post" ng-repeat="p in home.posts">
+    <h4>{{p.name}}<span>@{{p.log}} {{p.time}}</span></h4>
+    <p>{{p.text}}</p>
+    <button type="button" class="btn btn-default" ng-click="home.delete(p)">Delete</button><span class="wrong2"></span> </div>
+<div class="writePlace">
+    <div class="writePlace--container">
+        <form>
+            <div class="form-group">
+                <h3>Write message</h3>
+                <textarea class="form-control" rows="2" id="comment" ng-model="home.text"></textarea>
+                <button type="submit" class="btn btn-primary" ng-click="home.writePost()">SEND</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<div class="btnOpen" onclick="openNav()"><img src="/css/img/user%20panel.png" alt="UserPanel"></div>
+<div id="mySidenav" class="sidenav"> <span class="closebtn" onclick="closeNav()">&times;</span>
+    <div class="sidenav--container">
+        <h1><span></span>{{home.userNow.name}}</h1>
+        <h4>login@ {{home.userNow.log}}</h4>
+        <hr>
+        <div class="friends">
+            <h2>Friends: {{home.userNow.friends.length}}</h2>
+            <ul>
+                <div class="users--box">
+                <ul>
+                    <li ng-repeat="u in home.userNow.friends">{{u.name}}
+                       <span>@{{u.log}}</span>
+                       <br>
+                       <div class="btn-group">
+                        <button type="button" class="btn btn-info" ng-click="">Write</button>
+                        <button type="button" class="btn btn-danger" ng-click="home.deleteFriend(u)">Delete</button>
+                        </div>
+                       </li>
+                </ul>
+            </ul>
+        </div>
+        <button class="btn btn-success"  data-toggle="modal" data-target="#myModal">Show another users</button>
+        </div>
+
+
+</div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">All Users</h4>
+      </div>
+      <div class="modal-body">
+       
+       <div class="friends">
+       
+        <ul>
+         <li ng-repeat="u in home.users|friends">{{u.name}}
+         <span>@{{u.log}}</span>
+         <button type="button" class="btn btn-primary btnUsers" ng-click="home.addFriend(u)">+ ADD</button>
+         </li>
+     </ul>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
